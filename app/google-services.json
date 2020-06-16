@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "818547242961",
+    "firebase_url": "https://app-vertiefung.firebaseio.com",
+    "project_id": "app-vertiefung",
+    "storage_bucket": "app-vertiefung.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818547242961:android:0a56e7193efd464b8912f0",
+        "android_client_info": {
+          "package_name": "com.example.app_vertiefung"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818547242961-ujavsr27l4v7udgr360jjdggndfvdjae.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpBSjvpLJzHbvenaCEVBR0CMD9rvyGZww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818547242961-ujavsr27l4v7udgr360jjdggndfvdjae.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
