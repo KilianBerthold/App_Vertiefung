@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">App_Vertiefung</string>
+    <string name="app_name">RezAPPt</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -16,5 +16,10 @@
     <string name="button_rezepteList">Alle Rezepte</string>
     <string name="button_kategorienList">Kategorien</string>
     <string name="button_randomRezept">Zufälliges Rezept</string>
-    <string name="button_tutorial">NOCH ENTFERNEN</string>
+    <string name="button_tutorial">TEST</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_rezepte_list_back">Zurück</string>
+    <string name="textView_rezepte_list_header">Alle Rezepte:</string>
+    <string name="no_data_available">Es sind zur Zeit keine Rezepte vorhanden.</string>
 </resources>

@@ -39,5 +39,17 @@
         <action
             android:id="@+id/action_startseiteFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_startseiteFragment_to_rezepteListFragment"
+            app:destination="@id/rezepteListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rezepteListFragment"
+        android:name="com.example.app_vertiefung.RezepteListFragment"
+        android:label="fragment_rezepte_list"
+        tools:layout="@layout/fragment_rezepte_list" >
+        <action
+            android:id="@+id/action_rezepteListFragment_to_startseiteFragment"
+            app:destination="@id/startseiteFragment" />
     </fragment>
 </navigation>

@@ -6,6 +6,10 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.app_vertiefung.services.RezeptService
+import kotlinx.android.synthetic.main.fragment_rezepte_list.*
+import models.SlimRezeptModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,11 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
-
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

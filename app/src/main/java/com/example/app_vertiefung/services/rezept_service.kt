@@ -1,7 +1,10 @@
 package com.example.app_vertiefung.services
 
+import android.provider.Settings
 import com.google.common.base.Strings
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import models.RezeptModel
 import models.SlimRezeptModel
 import java.time.LocalDate
@@ -11,11 +14,10 @@ import kotlin.reflect.typeOf
 
 class RezeptService {
 
-    suspend fun getAllSlimRezepte(): MutableList<SlimRezeptModel> {
+    //Lädt eine Auswahl an Daten von allen Rezepten
+    fun getAllSlimRezepte(): MutableList<SlimRezeptModel> {
         val db = FirebaseFirestore.getInstance();
-        var rezepteList: MutableList<SlimRezeptModel> =
-            emptyList<SlimRezeptModel>().toMutableList();
-
+        var rezepteList: MutableList<SlimRezeptModel> = emptyList<SlimRezeptModel>().toMutableList();
         db.collection("Rezepte")
             .get()
             .addOnSuccessListener { result ->
@@ -49,11 +51,11 @@ class RezeptService {
                 print(exception.message)
                 print(exception.stackTrace)
             }
+
         return rezepteList
     }
 
     //Lädt alle Rezepte aus der Datenbank und speichert sie als Liste
-    //TODO: launch {} in der Funktion, die dieses Get aufruft! Coroutine
     suspend fun getAllRezepteWithDetails(): MutableList<RezeptModel> {
         val db = FirebaseFirestore.getInstance();
         var rezepteList: MutableList<RezeptModel> = emptyList<RezeptModel>().toMutableList();
@@ -94,6 +96,7 @@ class RezeptService {
                 print(exception.message)
                 print(exception.stackTrace)
             }
+
         return rezepteList
     }
 
