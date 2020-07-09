@@ -1,25 +1,61 @@
 <resources>
     <string name="app_name">RezAPPt</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="previous">Previous</string>
     <string name="toast_button_text">Toast</string>
     <string name="toast_button_message">This is a Toast.</string>
     <string name="random_button_text">Random</string>
-
     <string name="hello_first_fragment">0</string>
     <string name="random_heading">Here is a random number between 0 and %d.</string>
     <string name="count_button">Count</string>
     <string name="startseite_heading">RezAPPt</string>
     <string name="button_rezepteList">Alle Rezepte</string>
     <string name="button_kategorienList">Kategorien</string>
-    <string name="button_randomRezept">Zufälliges Rezept</string>
+    <string name="randomRezept">Zufälliges Rezept</string>
     <string name="button_tutorial">TEST</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="button_rezepte_list_back">Zurück</string>
-    <string name="textView_rezepte_list_header">Alle Rezepte:</string>
-    <string name="no_data_available">Es sind zur Zeit keine Rezepte vorhanden.</string>
+    <string name="button_back">Zurück</string>
+    <string name="textView_rezepte_list_header">Alle Rezepte</string>
+    <string name="textView_rezepte_detail_header">Rezept</string>
+    <string name="textView_kategorie_list_header">Alle Kategorien</string>
+    <string name="textView_kategorie_detail_header">Kategorie</string>
+    <string name="rezepte_list_no_data_available">Es sind zur Zeit keine Rezepte vorhanden.</string>
+    <string name="kategorie_list_no_data_available">Es sind zur Zeit keine Kategorien vorhanden.</string>
+    <string name="name_text">Name:</string>
+    <string name="textView_rezepte_list_kategorie_text">Kategorien:</string>
+    <string name="textView_rezepte_list_kalorien_text">Kalorien:</string>
+    <string name="textView_rezepte_list_zuletztgekocht">Zuletzt gekocht am:</string>
+    <string name="textView_empty">…</string>
+    <string name="textView_kategorie_detail_beschreibung_tag">Beschreibung:</string>
+    <string name="rezepte_list_anzahlgekocht"> Male gekocht.</string>
+    <string name="button_edit">Bearbeiten</string>
+    <string name="button_delete">Löschen</string>
+    <string name="button_save">Speichern</string>
+    <string name="refresh">Aktualisieren</string>
+    <string name="rezepte_detail_zuletztgekochtam">"Du hast dieses Rezept das letzte Mal am "</string>
+    <string name="textview_rezepte_detail_zuletztgekochtam2">" gekocht."</string>
+    <string name="rezepte_detail_zutaten">Zutaten:</string>
+    <string name="rezepte_detail_schritte">Schritte:</string>
+    <string name="loading">Daten werden geladen…</string>
+    <string name="new_kategorie">Neue Kategorie</string>
+    <string name="new_rezept">Neues Rezept</string>
+    <string name="textview_random_rezept_kategorie">Kategorie:</string>
+    <string name="textview_random_rezept_kalorien">Kalorien:</string>
+    <string name="button_random_rezept">Zufälliges Rezept auswählen!</string>
+    <string name="textView_random_rezept_zutat">Mit Zutat:</string>
+    <string name="toast_random_rezept">Kein Rezept gefunden!</string>
+    <string name="toast_no_kategorie_name">Es wurde kein Kategorie-Name angegeben!</string>
+    <string name="toast_duplicate_zutaten">Zutaten-Namen dürfen nicht doppelt vorkommen!</string>
+    <string name="button_rezepte_detail_kochen">Jetzt kochen!</string>
+    <string name="button_rezepte_edit_row">Add/Remove</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="amount_text">Anzahl:</string>
+    <string-array name="numberRelations">
+        <item>&lt;</item>
+        <item>&gt;</item>
+        <item>=</item>
+    </string-array>
 </resources>

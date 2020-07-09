@@ -31,7 +31,14 @@ class StartseiteFragment : Fragment() {
 
         view.findViewById<Button>(R.id.button_rezepteList).setOnClickListener {
             findNavController().navigate(R.id.action_startseiteFragment_to_rezepteListFragment)
-            //startActivity(Intent(activity, RezepteListActivity::class.java))
+        }
+
+        view.findViewById<Button>(R.id.button_kategorienList).setOnClickListener {
+            findNavController().navigate(R.id.action_startseiteFragment_to_kategorieListFragment)
+        }
+
+        view.findViewById<Button>(R.id.button_randomRezept).setOnClickListener {
+            findNavController().navigate(R.id.action_startseiteFragment_to_randomRezeptFragment)
         }
 
     }

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".RandomRezeptFragment">
+
+        <Button
+            android:id="@+id/button_random_rezept_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/button_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_random_rezept_back" />
+
+        <TextView
+            android:id="@+id/textView_random_rezept_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/randomRezept"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+        <TextView
+            android:id="@+id/textView_random_rezept_kategorie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/textview_random_rezept_kategorie"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_random_rezept_header" />
+
+        <Spinner
+            android:id="@+id/spinner_random_rezept_kategorie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_random_rezept_kategorie"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_random_rezept_kategorie"
+            app:layout_constraintTop_toTopOf="@+id/textView_random_rezept_kategorie" />
+
+        <TextView
+            android:id="@+id/textView_random_rezept_kalorien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:labelFor="@+id/editText_random_rezept_kalorien"
+            android:text="@string/textview_random_rezept_kalorien"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_random_rezept_kategorie" />
+
+        <Spinner
+            android:id="@+id/spinner_random_rezept_kalorien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_random_rezept_kalorien"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/spinner_random_rezept_kategorie"
+            app:layout_constraintTop_toTopOf="@+id/textView_random_rezept_kalorien" />
+
+        <EditText
+            android:id="@+id/editText_random_rezept_kalorien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_random_rezept_kalorien"
+            app:layout_constraintStart_toEndOf="@+id/spinner_random_rezept_kalorien"
+            app:layout_constraintTop_toTopOf="@+id/spinner_random_rezept_kalorien" />
+
+        <TextView
+            android:id="@+id/textView_random_rezept_zutat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"
+            android:labelFor="@+id/editText_random_rezept_zutat"
+            android:text="@string/textView_random_rezept_zutat"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_random_rezept_kalorien" />
+
+        <EditText
+            android:id="@+id/editText_random_rezept_zutat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_random_rezept_zutat"
+            app:layout_constraintStart_toEndOf="@+id/textView_random_rezept_zutat"
+            app:layout_constraintTop_toTopOf="@+id/textView_random_rezept_zutat" />
+
+        <Button
+            android:id="@+id/button_get_random_rezept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="@string/button_random_rezept"
+            app:layout_constraintStart_toStartOf="@+id/textView_random_rezept_kategorie"
+            app:layout_constraintTop_toBottomOf="@+id/textView_random_rezept_kalorien" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="500dp"
+            android:text="FOR DEBUGGING PURPOSES"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_random_rezept_header" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

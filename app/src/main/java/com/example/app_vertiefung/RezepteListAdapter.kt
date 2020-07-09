@@ -1,44 +1,52 @@
 package com.example.app_vertiefung
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.rezepte_list_row.view.*
-import models.SlimRezeptModel
+import com.example.app_vertiefung.models.SlimRezeptModel
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 
-class RezepteListAdapter(private val myDataset: MutableList<SlimRezeptModel>) :
+class RezepteListAdapter(
+    private var myDataset: MutableList<SlimRezeptModel>,
+    val adapterOnClick: RezeptAdapterOnClick
+) :
     RecyclerView.Adapter<RezepteListAdapter.RezepteListViewHolder>() {
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder.
-    // Each data item is just a string in this case that is shown in a TextView.
-    class RezepteListViewHolder(val view: View) : RecyclerView.ViewHolder(view)
+    class RezepteListViewHolder(val view: ConstraintLayout) : RecyclerView.ViewHolder(view)
 
-
-    // Create new views (invoked by the layout manager)
-    override fun onCreateViewHolder(parent: ViewGroup,
-                                    viewType: Int): RezepteListAdapter.RezepteListViewHolder {
-        // create a new view
-        val textView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.rezepte_list_row, parent, false) as TextView
-        // set the view's size, margins, paddings and layout parameters
-        //...
-        return RezepteListViewHolder(textView)
+    interface RezeptAdapterOnClick {
+        fun openRezeptDetailView(id: String)
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RezepteListViewHolder {
+        val constraintLayout = LayoutInflater.from(parent.context)
+            .inflate(R.layout.rezepte_list_row, parent, false) as ConstraintLayout
+        return RezepteListViewHolder(constraintLayout)
+    }
+
     override fun onBindViewHolder(holder: RezepteListViewHolder, position: Int) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
         holder.view.rezepte_list_name.text = myDataset[position].name
-        holder.view.rezepte_list_kategorie.text = myDataset[position].kategorien.orEmpty().joinToString(", ")
+        holder.view.rezepte_list_kategorie.text =
+            if (myDataset[position].kategorien.size > 0)
+                myDataset[position].kategorien.joinToString(", ")
+            else
+                "Keine"
         holder.view.rezepte_list_kalorien.text = myDataset[position].kalorien.toString()
+        holder.view.rezepte_list_zuletztgekocht.text =
+            if (myDataset[position].anzahlGekocht != 0.toLong())
+                myDataset[position].zuletztGekochtAm.toInstant()
+                    .atZone(ZoneId.systemDefault())
+                    .toLocalDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")).toString()
+            else "Noch nie."
+        holder.view.rezepte_list_anzahlgekocht.text = myDataset[position].anzahlGekocht.toString()
+        holder.view.setOnClickListener {
+            adapterOnClick.openRezeptDetailView(myDataset[position].id)
+        }
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = myDataset.size
 
 }

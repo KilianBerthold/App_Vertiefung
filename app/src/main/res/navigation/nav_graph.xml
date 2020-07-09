@@ -42,6 +42,12 @@
         <action
             android:id="@+id/action_startseiteFragment_to_rezepteListFragment"
             app:destination="@id/rezepteListFragment" />
+        <action
+            android:id="@+id/action_startseiteFragment_to_kategorieListFragment"
+            app:destination="@id/kategorieListFragment" />
+        <action
+            android:id="@+id/action_startseiteFragment_to_randomRezeptFragment"
+            app:destination="@id/randomRezeptFragment" />
     </fragment>
     <fragment
         android:id="@+id/rezepteListFragment"
@@ -51,5 +57,109 @@
         <action
             android:id="@+id/action_rezepteListFragment_to_startseiteFragment"
             app:destination="@id/startseiteFragment" />
+        <action
+            android:id="@+id/action_rezepteListFragment_to_rezepteDetailFragment"
+            app:destination="@id/rezepteDetailFragment" />
+        <action
+            android:id="@+id/action_rezepteListFragment_to_rezepteEditFragment"
+            app:destination="@id/rezepteEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kategorieListFragment"
+        android:name="com.example.app_vertiefung.KategorieListFragment"
+        android:label="fragment_kategorie_list"
+        tools:layout="@layout/fragment_kategorie_list" >
+        <action
+            android:id="@+id/action_kategorieListFragment_to_startseiteFragment"
+            app:destination="@id/startseiteFragment" />
+        <action
+            android:id="@+id/action_kategorieListFragment_to_kategorieDetailFragment"
+            app:destination="@id/kategorieDetailFragment" />
+        <action
+            android:id="@+id/action_kategorieListFragment_to_kategorieEditFragment"
+            app:destination="@id/kategorieEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rezepteDetailFragment"
+        android:name="com.example.app_vertiefung.RezepteDetailFragment"
+        android:label="fragment_rezepte_detail"
+        tools:layout="@layout/fragment_rezepte_detail" >
+        <action
+            android:id="@+id/action_rezepteDetailFragment_to_rezepteListFragment"
+            app:destination="@id/rezepteListFragment" />
+        <argument
+            android:name="ID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_rezepteDetailFragment_to_rezepteEditFragment"
+            app:destination="@id/rezepteEditFragment" />
+        <action
+            android:id="@+id/action_rezepteDetailFragment_to_randomRezeptFragment"
+            app:destination="@id/randomRezeptFragment" />
+        <argument
+            android:name="Rezept"
+            app:argType="com.example.app_vertiefung.models.RezeptModel" />
+        <argument
+            android:name="modus"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/kategorieDetailFragment"
+        android:name="com.example.app_vertiefung.KategorieDetailFragment"
+        android:label="fragment_kategorie_detail"
+        tools:layout="@layout/fragment_kategorie_detail" >
+        <action
+            android:id="@+id/action_kategorieDetailFragment_to_kategorieListFragment"
+            app:destination="@id/kategorieListFragment" />
+        <argument
+            android:name="kategorie"
+            app:argType="models.KategorieModel" />
+        <action
+            android:id="@+id/action_kategorieDetailFragment_to_kategorieEditFragment"
+            app:destination="@id/kategorieEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kategorieEditFragment"
+        android:name="com.example.app_vertiefung.KategorieEditFragment"
+        android:label="fragment_kategorie_edit"
+        tools:layout="@layout/fragment_kategorie_edit" >
+        <action
+            android:id="@+id/action_kategorieEditFragment_to_kategorieDetailFragment"
+            app:destination="@id/kategorieDetailFragment" />
+        <argument
+            android:name="kategorie"
+            app:argType="models.KategorieModel" />
+        <action
+            android:id="@+id/action_kategorieEditFragment_to_kategorieListFragment"
+            app:destination="@id/kategorieListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rezepteEditFragment"
+        android:name="com.example.app_vertiefung.RezepteEditFragment"
+        android:label="fragment_rezepte_edit"
+        tools:layout="@layout/fragment_rezepte_edit" >
+        <action
+            android:id="@+id/action_rezepteEditFragment_to_rezepteDetailFragment"
+            app:destination="@id/rezepteDetailFragment" />
+        <action
+            android:id="@+id/action_rezepteEditFragment_to_rezepteListFragment"
+            app:destination="@id/rezepteListFragment" />
+        <argument
+            android:name="rezept"
+            app:argType="com.example.app_vertiefung.models.RezeptModel" />
+        <argument
+            android:name="modus"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/randomRezeptFragment"
+        android:name="com.example.app_vertiefung.RandomRezeptFragment"
+        android:label="RandomRezeptFragment" >
+        <action
+            android:id="@+id/action_randomRezeptFragment_to_startseiteFragment"
+            app:destination="@id/startseiteFragment" />
+        <action
+            android:id="@+id/action_randomRezeptFragment_to_rezepteDetailFragment"
+            app:destination="@id/rezepteDetailFragment" />
     </fragment>
 </navigation>

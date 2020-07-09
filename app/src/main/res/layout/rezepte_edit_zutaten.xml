@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="2dp"
+    android:layout_marginEnd="2dp">
+
+    <TextView
+        android:id="@+id/textView_rezepte_edit_zutat_name_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:labelFor="@+id/editText_rezepte_edit_zutat_name"
+        android:text="@string/name_text"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_rezepte_edit_zutat_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText_rezepte_edit_zutat_name" />
+
+    <EditText
+        android:id="@+id/editText_rezepte_edit_zutat_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textCapSentences|textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView_rezepte_edit_zutat_name_tag"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_rezepte_edit_zutat_anzahl_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:labelFor="@+id/editText_rezepte_edit_zutat_anzahl"
+        android:text="@string/amount_text"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_rezepte_edit_zutat_anzahl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText_rezepte_edit_zutat_anzahl" />
+
+    <EditText
+        android:id="@+id/editText_rezepte_edit_zutat_anzahl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textCapSentences|textMultiLine"
+        app:layout_constraintEnd_toStartOf="@+id/button_rezepte_edit_zutaten"
+        app:layout_constraintStart_toStartOf="@+id/editText_rezepte_edit_zutat_name"
+        app:layout_constraintTop_toBottomOf="@+id/editText_rezepte_edit_zutat_name" />
+
+    <Button
+        android:id="@+id/button_rezepte_edit_zutaten"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="@string/minus"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_rezepte_edit_zutat_anzahl"
+        app:layout_constraintEnd_toEndOf="@+id/editText_rezepte_edit_zutat_name"
+        app:layout_constraintTop_toTopOf="@+id/editText_rezepte_edit_zutat_anzahl" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_rezepte_edit_zutat_anzahl" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
