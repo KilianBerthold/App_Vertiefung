@@ -55,15 +55,13 @@ class RezepteListFragment : Fragment(), CoroutineScope by MainScope(),
                 adapter = RezepteListAdapter(rezepteList, that)
 
                 if (rezepteList.isEmpty()) {
-                    view.findViewById<RecyclerView>(R.id.rezepte_list_recycler_view).visibility =
-                        View.GONE
+                    view.findViewById<RecyclerView>(R.id.rezepte_list_recycler_view).visibility = View.GONE
                     view.findViewById<TextView>(R.id.rezepte_list_empty_view).apply {
                         visibility = View.VISIBLE
                         text = getString(R.string.rezepte_list_no_data_available)
                     }
                 } else {
-                    view.findViewById<RecyclerView>(R.id.rezepte_list_recycler_view).visibility =
-                        View.VISIBLE
+                    view.findViewById<RecyclerView>(R.id.rezepte_list_recycler_view).visibility = View.VISIBLE
                     view.findViewById<TextView>(R.id.rezepte_list_empty_view).visibility = View.GONE
                 }
             }

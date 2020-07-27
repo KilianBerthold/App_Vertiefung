@@ -20,6 +20,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import java.lang.StringBuilder
+import java.text.DateFormat
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -84,8 +85,9 @@ class RezepteDetailFragment : Fragment(), CoroutineScope by MainScope() {
                     "AnzahlGekocht" to rezept.anzahlGekocht,
                     "ZuletztGekochtAm" to rezept.zuletztGekochtAm
                 )
-                val zuletztGekochtAm = "Zuletzt gekocht am " + rezept.zuletztGekochtAm.toInstant().atZone(ZoneId.systemDefault())
-                            .toLocalDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")).toString()
+                val df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.GERMANY)
+                val zuletztGekochtAm = "Zuletzt gekocht am " + df.format(rezept.zuletztGekochtAm)
+
                 val anzahlGekocht = rezept.anzahlGekocht.toString() + " Male gekocht"
 
                 view.findViewById<TextView>(R.id.textView_rezepte_detail_zuletztgekochtam).text = zuletztGekochtAm
@@ -125,10 +127,12 @@ class RezepteDetailFragment : Fragment(), CoroutineScope by MainScope() {
                 name = rezept.name,
                 kalorien = rezept.kalorien.toString() + " Kalorien",
                 zuletztGekochtAm =
-                    if (rezept.anzahlGekocht != 0.toLong())
-                        "Zuletzt gekocht am " + rezept.zuletztGekochtAm.toInstant().atZone(ZoneId.systemDefault())
-                            .toLocalDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")).toString()
-                    else "Noch nie gekocht.",
+                if (rezept.anzahlGekocht != 0.toLong()) {
+                    val df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.GERMANY)
+                    "Zuletzt gekocht am " + df.format(rezept.zuletztGekochtAm)
+                } else {
+                    "Noch nie gekocht."
+                },
                 anzahlGekocht = rezept.anzahlGekocht.toString() + if (rezept.anzahlGekocht < 2) " Mal gekocht" else " Male gekocht",
                 zutaten = zutaten.toString(),
                 schritte = schritte.toString(),

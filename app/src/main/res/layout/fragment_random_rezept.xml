@@ -136,20 +136,12 @@
             android:id="@+id/button_get_random_rezept"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/button_random_rezept"
-            app:layout_constraintStart_toStartOf="@+id/textView_random_rezept_kategorie"
-            app:layout_constraintTop_toBottomOf="@+id/textView_random_rezept_kalorien" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="500dp"
-            android:text="FOR DEBUGGING PURPOSES"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_random_rezept_header" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView_random_rezept_zutat"
+            app:layout_constraintTop_toBottomOf="@+id/editText_random_rezept_zutat" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

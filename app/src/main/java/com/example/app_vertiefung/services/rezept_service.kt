@@ -31,13 +31,9 @@ class RezeptService {
             val rezepteList: MutableList<SlimRezeptModel> = emptyList<SlimRezeptModel>().toMutableList();
             for (document in result.documents) {
                 if (document != null) {
-                    //Unchecked casts beim konvertieren der Dokument-Werte zu Array<String> oder Map<String, String>.
-                    var kategorien: MutableList<String> =
-                        emptyList<String>().toMutableList()
+                    var kategorien: MutableList<String> = emptyList<String>().toMutableList()
                     if (document.get("Kategorie") != null) {
-                        kategorien =
-                            (document.get("Kategorie") as? ArrayList<*>)?.filterIsInstance<String>() as MutableList<String>
-
+                        kategorien = (document.get("Kategorie") as? ArrayList<*>)?.filterIsInstance<String>() as MutableList<String>
                     }
                     val slimRezept = SlimRezeptModel(
                         id = document.id,
@@ -48,7 +44,6 @@ class RezeptService {
                         zuletztGekochtAm = timeStampToDate(document.get("ZuletztGekochtAm") as Timestamp)
                     )
                     rezepteList.add(slimRezept)
-                    //printSlimRezept(slimRezept)
                 }
             }
             rezepteList.sortBy { it.name }
@@ -118,17 +113,15 @@ class RezeptService {
             if (suchKriterien.zutat != "") {
                 rezepteList = rezepteList.filter { it.zutaten.containsKey(suchKriterien.zutat) }.toMutableList()
             }
-
             return when (rezepteList.size) {
                 0 -> RezeptModel()
                 1 -> rezepteList.first()
                 else -> { //Wenn mehrere Gerichte zur Auswahl stehen, wähle das Gericht das am längsten nicht gekocht wurde
-                    rezepteList.sortByDescending { it.zuletztGekochtAm }
+                    rezepteList.sortBy { it.zuletztGekochtAm }
                     rezepteList.first()
                 }
             }
         }
-
         return RezeptModel()
     }
 

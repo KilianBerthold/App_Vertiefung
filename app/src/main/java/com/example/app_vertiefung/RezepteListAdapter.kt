@@ -1,13 +1,16 @@
 package com.example.app_vertiefung
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.rezepte_list_row.view.*
 import com.example.app_vertiefung.models.SlimRezeptModel
+import java.text.DateFormat
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 class RezepteListAdapter(
     private var myDataset: MutableList<SlimRezeptModel>,
@@ -37,9 +40,14 @@ class RezepteListAdapter(
         holder.view.rezepte_list_kalorien.text = myDataset[position].kalorien.toString()
         holder.view.rezepte_list_zuletztgekocht.text =
             if (myDataset[position].anzahlGekocht != 0.toLong())
-                myDataset[position].zuletztGekochtAm.toInstant()
-                    .atZone(ZoneId.systemDefault())
-                    .toLocalDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")).toString()
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    myDataset[position].zuletztGekochtAm.toInstant()
+                        .atZone(ZoneId.systemDefault())
+                        .toLocalDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")).toString()
+                } else {
+                    val df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.GERMANY)
+                    df.format(myDataset[position].zuletztGekochtAm)
+                }
             else "Noch nie."
         holder.view.rezepte_list_anzahlgekocht.text = myDataset[position].anzahlGekocht.toString()
         holder.view.setOnClickListener {

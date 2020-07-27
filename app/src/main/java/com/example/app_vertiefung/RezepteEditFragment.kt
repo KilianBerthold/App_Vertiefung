@@ -208,7 +208,6 @@ class RezepteEditFragment : Fragment(), CoroutineScope by MainScope(),
     }
 
     private fun checkIfZutatenHasDuplicates(list: MutableList<Pair<String, String>>): Boolean {
-        println(list.groupingBy { it.first }.eachCount())
         return list.groupingBy { it.first }.eachCount().any { it.value > 1 }
     }
 
